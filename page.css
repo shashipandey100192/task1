@@ -1,0 +1,46 @@
+ .two
+        {
+            width:500px !important;
+            height: 400px;
+            background-color: green !important;
+        }
+        .row
+        {
+            width: 1200px;
+            height: 400px;
+            border:1px solid red;
+            margin:10px;
+        }
+        .row>div
+        {
+            border:1px solid green;
+            width:600px;
+            height: 400px;
+            float:right;
+            box-sizing: border-box;
+            padding:50px;
+        }
+        .one
+        {
+            background-color: orange;
+        }
+        .right
+        {
+            background-color: blueviolet;
+        }
+
+        .myrow
+        {
+            width:1200px;
+            height: 200px;
+            border:1px solid red;
+        }
+        .myrow>section
+        {
+            width:200px;
+            height: 200px;
+            background-color: green;
+            border:1px solid blue;
+            box-sizing: border-box;
+            float:right;
+        }

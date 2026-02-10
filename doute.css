@@ -1,0 +1,99 @@
+*
+{
+    margin:0 auto;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    /* filter: grayscale(100%); */
+    /* filter:blur(5px); */
+    /* filter:sepia(100%); */
+    /* filter: invert(100%) grayscale(50%) blur(2px); */
+}
+
+
+.page
+{
+    width:1200px;
+    min-height: 800px;
+    max-height: fit-content;
+    border:1px solid red;
+}
+
+.slider
+{
+    min-height: 400px;
+    max-height: fit-content;
+    background-color: rgb(201, 200, 200);
+}
+
+.slider>section
+{
+    width: 1200px;
+    height: 400px;
+    background-color: green;
+    clip-path:polygon(300px 0px, 1200px 0px,1200px 400px,600px 400px);
+}
+
+
+
+
+/* -------------------start service page-----------------------------*/
+.service
+{
+    width:100%;
+    height: auto;
+    border:1px solid green;
+    text-align: center;
+}
+.service h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.service p{
+    margin-top:10px;
+}
+.service hr{
+    width:200px;
+    height: 10px;
+    background-color: orange;
+}
+.service section
+{
+    width:100%;
+    height: auto;
+    border:1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.service>section>div
+{
+    border:1px solid red;
+    padding:10px;
+    width:270px;
+    min-height: 100px;
+    max-height: fit-content;
+    margin:2px;
+    background-color: antiquewhite !important;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+.service img
+{
+    width: 100%;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    filter: saturate(5);
+}
+.service h2{
+    color:red;
+    text-align: center;
+    text-transform: uppercase;
+    margin:20px 0 10px 0;
+}
+
+
+
+
+
+
