@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<!-- <fieldset>
+    <legend>change back</legend>
+    red<input type="radio" name="one" onclick="abc()" value="red">
+    green<input type="radio" name="one" value="green" onclick="abc1()">
+    orange<input type="radio" name="one" value="orange" onclick="abc2()">
+    blue<input type="radio" name="one" value="blue" onclick="abc3()">
+
+</fieldset> -->
+
+
+<fieldset>
+    <legend>change back</legend>
+    red<input type="radio" name="one" onclick="abc(this)" value="red">
+    green<input type="radio" name="one" value="green" onclick="abc(this)">
+    orange<input type="radio" name="one" value="orange" onclick="abc(this)">
+    blue<input type="radio" name="one" value="blue" onclick="abc(this)">
+
+</fieldset>
+
+<input type="color" id="two" oninput="xyz(this)">
+
+<input type="file" onclick="abcd(this)">
+
+<script>
+// function abc()
+// {
+//     var a = document.querySelectorAll("input");
+//     console.log(a[0].value)
+// }
+
+// function abc1()
+// {
+//     var a = document.querySelectorAll("input");
+//     console.log(a[1].value)
+// }
+
+// function abc2()
+// {
+//     var a = document.querySelectorAll("input");
+//     console.log(a[2].value)
+// }
+
+// function abc3()
+// {
+//     var a = document.querySelectorAll("input");
+//     console.log(a[3].value)
+// }
+
+
+
+
+
+// var a = document.querySelectorAll("input");
+// function abc()
+// {
+//     document.bgColor = a[0].value;
+// }
+
+// function abc1()
+// {
+//      document.bgColor = a[1].value;
+// }
+
+// function abc2()
+// {
+//      document.bgColor = a[2].value;
+// }
+
+// function abc3()
+// {
+//      document.bgColor = a[3].value;
+// }
+
+
+
+
+function abc(a)
+{
+    document.bgColor=a.value;
+}
+
+function xyz(e)
+{
+    document.bgColor=e.value;
+}
+
+
+function abcd(e)
+{
+    console.log(e.value);
+}
+
+
+</script>
+
+
+
+</body>
+</html>

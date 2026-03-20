@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    username: <input type="text"><br>
+
+
+<select onchange="xyz()">
+    <option>jan</option>
+    <option>feb</option>
+    <option>mar</option>
+    <option>apr</option>
+</select>
+
+
+<h1>heading one</h1>
+
+<input type="button" value="submit" onclick="abc()">
+
+<script>
+function abc()
+{
+    var a = document.querySelector("input");
+    var b = document.querySelector("h1");
+
+    console.log(a.value);
+    var c = a.value;
+        b.innerText=c+"kumar";
+}
+
+
+function xyz()
+{
+    var d = document.querySelectorAll("h1,input,select");
+    console.log(d);
+    d[0].value = d[1].value;
+    d[2].innerText = d[1].value;
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
