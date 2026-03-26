@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="mywatch"></h1>
+    <script>
+
+        function abc() {
+            var jwatch = document.getElementById('mywatch');
+            var mydate = new Date();
+            // console.log(mydate);
+            // console.log(typeof(mydate));
+            var h = mydate.getHours();
+            var m = mydate.getMinutes();
+            var s = mydate.getSeconds();
+            var mytime = h + ":" + m + ":" + s;
+            jwatch.innerHTML = mytime;
+            if (h >= 14 && m >= 10 && s >= 0) {
+                document.bgColor = "red";
+            }
+            else {
+                document.bgColor = "green";
+            }
+        }
+        abc();
+        setInterval("abc()", 1000);
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

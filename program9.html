@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onresize="myscreen()">
+
+    <input type="button" value="clear" onclick="mytime()">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+
+    <script>
+
+        // function abc()
+        // {
+        //     alert("welcome");
+        // }
+        // setTimeout("abc()",2000)
+
+
+        function abc() {
+            alert("welcome");
+        }
+
+        var a = setTimeout("abc()", 2000000)
+
+        function mytime() {
+            clearTimeout(a);
+            abc();
+        }
+
+
+        function myscreen() {
+
+            var jp = document.querySelectorAll("p");
+            var b = screen;
+            console.log(b);
+            var w = b.width;
+            console.log(w);
+            jp[0].innerHTML = `screen width:${b.width}`;
+            jp[1].innerHTML = `screen height:${b.height}`;
+            jp[2].innerHTML = `screen type:${b.orientation.type}`;
+            jp[3].innerHTML = `screen angle:${b.orientation.angle}`;
+            jp[4].innerHTML = `screen width:${b.width}`;
+
+            if (b.width >= 1200) {
+                document.bgColor = "red";
+            }
+            else if (b.width >= 700) {
+                document.bgColor = "green";
+            }
+            else if (b.width >= 500) {
+                document.bgColor = "orange";
+            }
+            else {
+                document.bgColor = "blue";
+            }
+
+        }
+
+
+        myscreen();
+
+
+    </script>
+
+
+</body>
+
+</html>
