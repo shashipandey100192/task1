@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .letter {
+            width: 1000px;
+            min-height: 500px;
+            max-height: fit-content;
+            border: 1px solid red;
+            padding: 10px;
+            box-shadow: 2px 5px 5px black;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .date {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .subject {
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .content {
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 40px;
+        }
+
+        .signature {
+            margin-top: 60px;
+        }
+
+        @media print{
+            input,select
+            {
+                display: none;
+            }
+            .letter {
+                border:none;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Letter generate project (A-Z)</h1>
+
+    <select>
+        <option hidden>Types of Letter Layout</option>
+        <option>Joining</option>
+        <option>Resume</option>
+        <option>CV type</option>
+        <option>Resigin</option>
+    </select>
+    <div class="letter">
+
+    </div>
+
+
+
+
+
+    <script>
+        var jsletter = document.querySelector('.letter');
+        var myopt = document.querySelector("select");
+        myopt.addEventListener("change", () => {
+            var a = myopt.value;
+            console.log(a);
+            if (a == "Joining") {
+                joiningletter();
+            }
+            else if (a == "Resume") {
+
+            }
+            else {
+                alert("this is not valid");
+                jsletter.innerHTML = "";
+            }
+        });
+
+
+        function joiningletter() {
+            jsletter.innerHTML = `
+        <div class="letter-container">
+            <input type="button" value="edit" onclick="editJoiningletter()">
+            <input type="button" value="print" onclick="pageprint()">
+
+    <div class="header">
+        <h2>ABC Technologies Pvt. Ltd.</h2>
+        <p>New Delhi, India</p>
+    </div>
+
+    <div class="date">
+        Date: 03 April 2026
+    </div>
+
+    <div>
+        <p>To,</p>
+        <p><strong>Mr. Shashi Pandey</strong><br>
+        Delhi, India</p>
+    </div>
+
+    <div class="subject">
+        Subject: Joining Letter
+    </div>
+
+    <div class="content">
+        <p>Dear Sir,</p>
+
+        <p>
+            With reference to your offer letter, I am pleased to inform you that I accept the position 
+            of <strong>Software Developer</strong> at ABC Technologies Pvt. Ltd.
+        </p>
+
+        <p>
+            I will be joining the organization on <strong>10 April 2026</strong> as per the terms 
+            and conditions mentioned in the offer letter.
+        </p>
+
+        <p>
+            I am grateful for this opportunity and look forward to contributing my skills and knowledge 
+            to the growth of the organization.
+        </p>
+
+        <p>Thank you.</p>
+    </div>
+
+    <div class="footer">
+        <p>Yours sincerely,</p>
+
+        <div class="signature">
+            <p><strong>Shashi Pandey</strong></p>
+            <p>Software Developer</p>
+        </div>
+    </div>
+
+</div>
+    
+    `;
+        }
+
+
+        function editJoiningletter() {
+            var name, date, cname;
+            name = prompt("enter username");
+            date = prompt("enter date");
+            cname = prompt("enter company  name");
+            jsletter.innerHTML = `
+         <div class="letter-container">
+            <input type="button" value="edit" onclick="editJoiningletter()">
+            <input type="button" value="print" onclick="pageprint()">
+    <div class="header">
+        <h2>${cname}</h2>
+        <p>New Delhi, India</p>
+    </div>
+
+    <div class="date">
+        Date: ${date}
+    </div>
+
+    <div>
+        <p>To,</p>
+        <p><strong>Mr. ${name}</strong><br>
+        Delhi, India</p>
+    </div>
+
+    <div class="subject">
+        Subject: Joining Letter
+    </div>
+
+    <div class="content">
+        <p>Dear Sir,</p>
+
+        <p>
+            With reference to your offer letter, I am pleased to inform you that I accept the position 
+            of <strong>Software Developer</strong> at ${cname}
+        </p>
+
+        <p>
+            I will be joining the organization on <strong>${date}</strong> as per the terms 
+            and conditions mentioned in the offer letter.
+        </p>
+
+        <p>
+            I am grateful for this opportunity and look forward to contributing my skills and knowledge 
+            to the growth of the organization.
+        </p>
+
+        <p>Thank you.</p>
+    </div>
+
+    <div class="footer">
+        <p>Yours sincerely,</p>
+
+        <div class="signature">
+            <p><strong>${name}</strong></p>
+            <p>Software Developer</p>
+        </div>
+    </div>
+
+</div>
+        `
+        }
+
+
+
+function pageprint()
+{
+    window.print();
+}
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
