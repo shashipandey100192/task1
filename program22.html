@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            list-style: none;
+        }
+        ul li
+        {
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><input type="text" placeholder="enter name"></li>
+    <li><input type="text" placeholder="enter email"></li>
+    <li><input type="text" placeholder="enter phoneno"></li>
+    
+    <li><input type="button" value="submit" onclick="getuserdata()"></li>
+</ul>
+<button type="button" onclick="getdata()">getlocal data</button>
+
+
+
+<script>
+
+class Infopattern{
+    constructor(name,email,phone)
+    {
+        this.username=new String(name).toUpperCase();
+        this.email=email;
+        this.phone=phone;
+    }
+}
+
+
+var userdata = [];
+function getuserdata()
+{
+    var userinput = document.querySelectorAll("input");
+    // userdata.push({username:userinput[0].value,email:userinput[1].value,phone:userinput[2].value});
+    var user = new Infopattern(userinput[0].value,userinput[1].value,userinput[2].value);
+    userdata.push(user)
+console.log(userdata);
+
+    localStorage.setItem("mydata",JSON.stringify(userdata));
+    sessionStorage.setItem("sessiondata",JSON.stringify(userdata));
+
+}
+
+function getdata()
+
+{
+    var mylocaldata =JSON.parse(localStorage.getItem("mydata"));
+    console.log(mylocaldata)
+}
+
+</script>
+
+    
+</body>
+</html>

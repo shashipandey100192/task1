@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+
+    <input type="button" value="show" onclick="abc()">
+
+    <script>
+
+        // function Mypattern(name,email,phone)
+        // {
+        //     this.uname=name;
+        //     this.uemail=email;
+        //     this.uphone=phone;
+        // }
+        var mydiv = document.querySelector("div");
+
+        class Mypattern {
+            constructor(name, email, phone) {
+                this.uname = name;
+                this.uemail = email;
+                this.uphone = phone;
+                this.udetails = () => {
+                    return `${this.uname} / ${this.uemail} / ${this.fees}`;
+                }
+            }
+
+        }
+        Mypattern.prototype.fees = 8000;
+        Mypattern.prototype.sclass = "BCA";
+
+
+
+
+        // var student = {email:"ravi@gmail.com",phone:"4545878545",name:"ravi"};
+        var student = new Mypattern("ravi", "email@gmail.com", "55555555");
+        console.log(student.uname);
+        console.log(student);
+
+        mydiv.innerHTML = `
+            <h2>${student.uname}</h2>
+            <h2>${student.uemail}</h2>
+            <h2>${student.uphone}</h2>
+            <h2>${student.fees}</h2>
+            
+        `;
+
+
+        function abc() {
+            //  console.log(student.udetails());
+            mydiv.innerHTML += student.udetails();
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
